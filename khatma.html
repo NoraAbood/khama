@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ختم القران في ذي الحجة</title>
+  <link rel="stylesheet" href="stylr.css">
+</head>
+<body>
+  <div class="container">
+    <img src="BookPNG.jpeg" alt="quran" class="my-image">
+    <h1>جدول ختم القران في ذي الحجة</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>اليوم</th>
+          <th>تم الختم؟</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td> 1 * سورة البقرة وال عمران </td><td><input type="checkbox"></td></tr>
+        <tr><td>2 * النساء والمائدة والأنعام </td><td><input type="checkbox"></td></tr>
+        <tr><td> 3 * الأعراف والأنفال والتوبة </td><td><input type="checkbox"></td></tr>
+        <tr><td> 4 * من سورة يونس إلى سورة الحجر </td><td><input type="checkbox"></td></tr>
+        <tr><td> 5 * من سورة النحل إلى سورة الأنبياء</td><td><input type="checkbox"></td></tr>
+        <tr><td> 6 * من سورة الحج إلى سورة القصص</td><td><input type="checkbox"></td></tr>
+        <tr><td>7 * من سورة العنكبوت إلى سورة الزمر</td><td><input type="checkbox"></td></tr>
+        <tr><td>8 * من سورة غافر إلى سورة الحديد </td><td><input type="checkbox"></td></tr>
+        <tr><td> 9 * من سورة المجادلة إلى سورة الناس</td><td><input type="checkbox"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h1>نوره</h1>
+
+  <script>
+    // حفظ واسترجاع حالة التشييك
+    document.addEventListener("DOMContentLoaded", function () {
+      const checkboxes = document.querySelectorAll("input[type='checkbox']");
+      checkboxes.forEach((checkbox, index) => {
+        const saved = localStorage.getItem("day" + index);
+        checkbox.checked = saved === "true";
+        checkbox.addEventListener("change", () => {
+          localStorage.setItem("day" + index, checkbox.checked);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
